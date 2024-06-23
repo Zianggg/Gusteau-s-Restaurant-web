@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUSTEAU'S | Reservations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="shortcut icon" href="IMAGE\logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "J4Tzojtjc204Qe55y",
+        });
+    })();
+    </script>
+
+</head>
+<body class="reservation">
+
+    <div id="preloader" class="preloader"><i class="fa-solid fa-spinner fa-spin-pulse"></i></div>
+    
+    <div class="wrapper-reservation">
+        <h1 class="title-reservation">Reservation at Gusteau's</h1>
+        <div class="container-reservation">
+            <div class="input-area">
+                <div><input class="input-box" type="date" id="date"></div>
+                <div><input class="input-box" type="time" id="time"></div>
+                <div><input class="input-box" type="email" id="email" placeholder="Enter your email" autocomplete="off"></div>
+                <div><input class="input-box" type="text" id="phone_num" placeholder="Enter your phone number" autocomplete="off"></div>
+                <div><input class="input-box" type="text" id="name" placeholder="Enter your name" autocomplete="off"></div>
+                <div><input class="button" type="button" value="Make your reservation" onclick="check_valid_reservation()"></div>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <i class="fa-solid fa-circle-check"></i>
+            <h1>Thanks you!</h1>
+            <p>Your reservation has been sent. Please check your email for information.</p>
+            <button type="button" onclick="close_popup()">Ok</button>
+        </div>
+
+        <div class="reject_message" id="reject_message">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <h1>Reservation not accepted!</h1>
+            <p>Your reservation didn't have enough informations! Please fill all informations required!</p>
+            <button type="button" onclick="close_rejected_message()">I'm understand</button>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
